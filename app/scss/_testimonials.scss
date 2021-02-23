@@ -1,0 +1,118 @@
+.testimonials {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 100%;
+}
+
+.testimonials__img-container {
+    position: relative;
+    margin: 1rem;
+    overflow-x: hidden;
+    background-image: url('/images/pattern-bg.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.testimonials__img-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.testimonials-img {
+    position: absolute;
+    display: block;
+    height: 80%;
+    width: auto;
+    max-width: 70%;
+    object-fit: contain;
+    margin: auto;
+
+}
+
+.testimonials__btn-container {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1.5rem;
+    background-color: $white;
+    box-shadow: 
+    0 2.8px 2.2px rgba(50, 100, 100, 0.034),
+    0 6.7px 5.3px rgba(50, 100, 100, 0.048);
+}
+
+.testimonials__prev {
+    padding: 0.875rem 1.125rem;
+    border: 0;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    background-color: $white;
+    font-size: 0.75rem;
+    
+}
+
+.testimonials__next {
+    padding: 0.875rem 1.125rem;
+    border: 0;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    background-color: $white;
+    font-size: 0.75rem;
+}
+
+.testimonials__btn-icon {
+    display: block;
+    height: 12px;
+}
+
+.testimonials__copy-container {
+    position: relative;
+    overflow-x: hidden;
+    background-image: url('/images/pattern-curve.svg');
+    background-size: 76%;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+
+.testimonials__copy-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 3.5rem 2rem 4.75rem 2rem;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.testimonials__text {
+    max-width: 28rem;
+    margin: 0 auto;
+    padding-bottom: 1.25rem;
+    color: $darkBlue;
+    font-weight: $light;
+}
+
+.testimonials__author {
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+    font-weight: $bold;
+    color: $darkBlue;
+}
+
+.testimonials__position {
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+    font-weight: $light;
+    color: $grayishBlue;
+}
