@@ -65,12 +65,15 @@
     bottom: 0.75rem;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 1.5rem;
+    border-radius: 4rem;
     background-color: $white;
     box-shadow: 
     0 2.8px 2.2px rgba(50, 100, 100, 0.034),
     0 6.7px 5.3px rgba(50, 100, 100, 0.048);
 
+    @include breakpoint-up(large) {
+        bottom: 10rem;
+    }
 }
 
 .testimonials__prev {
@@ -78,11 +81,14 @@
     border: 0;
     border-radius: 50%;
     background-color: $white;
-    font-size: 0.75rem;
     
     &:hover {
         background-color: $grayishBlue;
         cursor: pointer;
+    }
+
+    @include breakpoint-up(large) {
+        padding: 1.25rem 1.5rem 1.25rem 1.25rem;
     }
 }
 
@@ -97,11 +103,19 @@
         background-color: $grayishBlue;
         cursor: pointer;
     }
+
+    @include breakpoint-up(large) {
+        padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    }
 }
 
 .testimonials__btn-icon {
     display: block;
     height: 12px;
+
+    @include breakpoint-up(large) {
+        height: 16px;
+    }
 }
 
 .testimonials__copy-container {
