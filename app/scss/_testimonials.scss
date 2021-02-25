@@ -70,25 +70,33 @@
     box-shadow: 
     0 2.8px 2.2px rgba(50, 100, 100, 0.034),
     0 6.7px 5.3px rgba(50, 100, 100, 0.048);
+
 }
 
 .testimonials__prev {
-    padding: 0.875rem 0.875rem 0.875rem 1rem;
+    padding: 0.875rem 1.125rem 0.875rem 0.875rem;
     border: 0;
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
+    border-radius: 50%;
     background-color: $white;
     font-size: 0.75rem;
     
+    &:hover {
+        background-color: $grayishBlue;
+        cursor: pointer;
+    }
 }
 
 .testimonials__next {
-    padding: 0.875rem 1rem 0.875rem 0.875rem ;
+    padding: 0.875rem 0.875rem 0.875rem 1.125rem;
     border: 0;
-    border-top-right-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
+    border-radius: 50%;
     background-color: $white;
     font-size: 0.75rem;
+
+    &:hover {
+        background-color: $grayishBlue;
+        cursor: pointer;
+    }
 }
 
 .testimonials__btn-icon {
@@ -99,10 +107,7 @@
 .testimonials__copy-container {
     position: relative;
     overflow-x: hidden;
-    background-image: url('/images/pattern-curve.svg');
-    background-size: 76%;
-    background-position: bottom left;
-    background-repeat: no-repeat;
+
 
     @include breakpoint-up(large) {
         grid-column-start: 1;

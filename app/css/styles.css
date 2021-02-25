@@ -19,6 +19,17 @@ body {
 .container {
   height: 100vh;
   width: 100vw;
+  background-image: url("/images/pattern-curve.svg");
+  background-repeat: no-repeat;
+  background-size: 76%;
+  background-position: bottom left;
+}
+
+@media (min-width: 61.25rem) {
+  .container {
+    background-size: 46%;
+    background-position: bottom left -40px;
+  }
 }
 
 .hidden-right {
@@ -126,21 +137,29 @@ body {
 }
 
 .testimonials__prev {
-  padding: 0.875rem 0.875rem 0.875rem 1rem;
+  padding: 0.875rem 1.125rem 0.875rem 0.875rem;
   border: 0;
-  border-top-left-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
+  border-radius: 50%;
   background-color: #fff;
   font-size: 0.75rem;
 }
 
+.testimonials__prev:hover {
+  background-color: #babacf;
+  cursor: pointer;
+}
+
 .testimonials__next {
-  padding: 0.875rem 1rem 0.875rem 0.875rem;
+  padding: 0.875rem 0.875rem 0.875rem 1.125rem;
   border: 0;
-  border-top-right-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
+  border-radius: 50%;
   background-color: #fff;
   font-size: 0.75rem;
+}
+
+.testimonials__next:hover {
+  background-color: #babacf;
+  cursor: pointer;
 }
 
 .testimonials__btn-icon {
@@ -151,10 +170,6 @@ body {
 .testimonials__copy-container {
   position: relative;
   overflow-x: hidden;
-  background-image: url("/images/pattern-curve.svg");
-  background-size: 76%;
-  background-position: bottom left;
-  background-repeat: no-repeat;
 }
 
 @media (min-width: 61.25rem) {

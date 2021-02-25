@@ -18,4 +18,15 @@ body {
 .container {
     height: 100vh;
     width: 100vw;
+    background-image: url('/images/pattern-curve.svg');
+    background-repeat: no-repeat;
+    background-size: 76%;
+    background-position: bottom left;
+
+    @include breakpoint-up(large) {
+        background-size: 46%;
+        background-position: bottom left -40px;
+    }
+ 
+    
 }
