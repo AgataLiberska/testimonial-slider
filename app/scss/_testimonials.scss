@@ -62,7 +62,7 @@
 
 .testimonials__btn-container {
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.75rem;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 1.5rem;
@@ -73,7 +73,7 @@
 }
 
 .testimonials__prev {
-    padding: 0.875rem 1.125rem;
+    padding: 0.875rem 0.875rem 0.875rem 1rem;
     border: 0;
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
@@ -83,7 +83,7 @@
 }
 
 .testimonials__next {
-    padding: 0.875rem 1.125rem;
+    padding: 0.875rem 1rem 0.875rem 0.875rem ;
     border: 0;
     border-top-right-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
@@ -127,9 +127,8 @@
     line-height: 1.5rem;
 
     @include breakpoint-up(large) {
-        //margin-left: 4.5rem;
         padding: 0;
-        align-items: left;
+        align-items: flex-start;
     }
 }
 
@@ -152,15 +151,26 @@
 }
 
 .testimonials__author {
+    margin: 0;
     font-size: 0.9375rem;
     line-height: 1.25rem;
     font-weight: $bold;
     color: $darkBlue;
+
+    @include breakpoint-up(large) {
+        font-size: 1.25rem;
+        line-height: 2.25rem;
+        text-align: left;
+    }
 }
 
 .testimonials__position {
-    font-size: 0.9375rem;
-    line-height: 1.25rem;
+    display: block;
     font-weight: $light;
     color: $grayishBlue;
+
+    @include breakpoint-up(large) {
+        display: inline-block;
+        padding-left: 0.5rem
+    }
 }
