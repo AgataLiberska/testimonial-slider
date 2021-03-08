@@ -32,27 +32,17 @@ body {
   }
 }
 
-.hidden-right {
-  -webkit-transform: translateX(100vw);
-          transform: translateX(100vw);
-}
-
-.hidden-left {
-  -webkit-transform: translateX(-100vw);
-          transform: translateX(-100vw);
-}
-
-.testimonials {
+.testimonial {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+  -ms-grid-rows: 1.2fr 1fr;
+      grid-template-rows: 1.2fr 1fr;
   gap: 1rem;
   height: 100%;
 }
 
 @media (min-width: 61.25rem) {
-  .testimonials {
+  .testimonial {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: 1fr;
@@ -63,8 +53,7 @@ body {
   }
 }
 
-.testimonials__img-container {
-  position: relative;
+.testimonial__img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,7 +72,7 @@ body {
 }
 
 @media (min-width: 61.25rem) {
-  .testimonials__img-container {
+  .testimonial__img {
     -ms-grid-column: 2;
         grid-column-start: 2;
     margin: 1rem 0;
@@ -94,8 +83,7 @@ body {
   }
 }
 
-.testimonials__img-wrapper {
-  position: relative;
+.testimonial__img-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,21 +102,27 @@ body {
   max-height: 42rem;
 }
 
-.testimonials-img {
-  position: absolute;
-  display: block;
+.testimonial__img-wrapper__inner {
+  position: relative;
+  height: 17rem;
+  width: 17rem;
   max-height: 80%;
+  max-width: 80%;
+}
+
+.testimonial-img {
+  display: block;
+  height: 100%;
   width: auto;
-  max-width: 70%;
   -o-object-fit: contain;
      object-fit: contain;
   margin: auto;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 6px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 6px 0px;
+  -webkit-box-shadow: 0 1rem 2.5rem -2.5rem rgba(36, 36, 113, 0.495001);
+          box-shadow: 0 1rem 2.5rem -2.5rem rgba(36, 36, 113, 0.495001);
 }
 
 @media (min-width: 61.25rem) {
-  .testimonials-img {
+  .testimonial-img {
     height: auto;
     max-width: 80%;
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
@@ -136,45 +130,45 @@ body {
   }
 }
 
-.testimonials__btn-container {
+.testimonial__btn-container {
   position: absolute;
-  bottom: 0.75rem;
+  bottom: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
   border-radius: 4rem;
   background-color: #fff;
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
+          box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
 }
 
 @media (min-width: 61.25rem) {
-  .testimonials__btn-container {
+  .testimonial__btn-container {
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     bottom: 2rem;
   }
 }
 
-.testimonials__prev {
+.testimonial__prev {
   padding: 0.875rem 1.125rem 0.875rem 0.875rem;
   border: 0;
   border-radius: 50%;
   background-color: #fff;
 }
 
-.testimonials__prev:hover {
+.testimonial__prev:hover {
   background-color: #babacf;
   cursor: pointer;
 }
 
 @media (min-width: 61.25rem) {
-  .testimonials__prev {
+  .testimonial__prev {
     padding: 1.25rem 1.5rem 1.25rem 1.25rem;
   }
 }
 
-.testimonials__next {
+.testimonial__next {
   padding: 0.875rem 0.875rem 0.875rem 1.125rem;
   border: 0;
   border-radius: 50%;
@@ -182,35 +176,35 @@ body {
   font-size: 0.75rem;
 }
 
-.testimonials__next:hover {
+.testimonial__next:hover {
   background-color: #babacf;
   cursor: pointer;
 }
 
 @media (min-width: 61.25rem) {
-  .testimonials__next {
+  .testimonial__next {
     padding: 1.25rem 1.25rem 1.25rem 1.5rem;
   }
 }
 
-.testimonials__btn-icon {
+.testimonial__btn-icon {
   display: block;
   height: 12px;
 }
 
 @media (min-width: 61.25rem) {
-  .testimonials__btn-icon {
+  .testimonial__btn-icon {
     height: 16px;
   }
 }
 
-.testimonials__copy-container {
+.testimonial__copy {
   position: relative;
   overflow-x: hidden;
 }
 
 @media (min-width: 61.25rem) {
-  .testimonials__copy-container {
+  .testimonial__copy {
     -ms-grid-column: 1;
         grid-column-start: 1;
     -ms-grid-row: 1;
