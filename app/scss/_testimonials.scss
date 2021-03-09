@@ -13,9 +13,9 @@
     }
 }
 
-// image section of the slider ----------------------------------
+// image section of the slider ===============================
 
-.testimonial__img {
+.testimonial__img__container {
     //position: relative;
     display: flex;
     justify-content: center;
@@ -31,8 +31,7 @@
         grid-column-start: 2;
         margin: 1rem 0;
         max-width: 770px;
-        z-index: 2;
-        transform: translateX(-6.25rem);
+        transform: translateX(-5.25rem);
     }
 }
 
@@ -48,30 +47,39 @@
 
 .testimonial__img-wrapper__inner {
     position: relative;
-    height: 17rem;
-    width: 17rem;
-    max-height: 80%;
-    max-width: 80%;
+    height: 20rem;
+    width: 20rem;
+    max-height: 85%;
+    max-width: 85%;
+
+    @include breakpoint-up(large) {
+        height: 34rem;
+        width: 34rem;
+        max-width: 75%;
+    }
 }
 
-// the actual image
+// the actual image --------
 
-.testimonial-img {
+.testimonial__img {
     display: block;
     height: 100%;
     width: auto;
-    object-fit: contain;
     margin: auto;
+    border-radius: 0.3125rem;
+    background-image: url('/images/image-tanya.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     box-shadow: 0 1rem 2.5rem -2.5rem rgba(36, 36, 113, 0.495001);
     
 
     @include breakpoint-up(large) {
-        height: auto;
-        max-width: 80%;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px;
+        box-shadow: 0px 2.5rem 3rem -1.75rem rgba(36, 36, 113, 0.495001);
     }
 }
 
+// slider buttons ===================================
 .testimonial__btn-container {
     position: absolute;
     bottom: 0;
@@ -80,16 +88,19 @@
     border-radius: 4rem;
     background-color: $white;
     box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
+    z-index: 7;
     
 
     @include breakpoint-up(large) {
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-        bottom: 2rem;
+        box-shadow: 0px 1rem 1.25rem -0.625rem rgba(36, 36, 113, 0.0991313);
+        left: 4rem;
+        transform: translateY(50%);
     }
 }
 
 .testimonial__prev {
-    padding: 0.875rem 1.125rem 0.875rem 0.875rem;
+    height: 2.5rem;
+    width: 2.5rem;
     border: 0;
     border-radius: 50%;
     background-color: $white;
@@ -100,16 +111,17 @@
     }
 
     @include breakpoint-up(large) {
-        padding: 1.25rem 1.5rem 1.25rem 1.25rem;
+        height: 3.5rem;
+        width: 3.5rem;
     }
 }
 
 .testimonial__next {
-    padding: 0.875rem 0.875rem 0.875rem 1.125rem;
+    height: 2.5rem;
+    width: 2.5rem;
     border: 0;
     border-radius: 50%;
     background-color: $white;
-    font-size: 0.75rem;
 
     &:hover {
         background-color: $grayishBlue;
@@ -117,12 +129,14 @@
     }
 
     @include breakpoint-up(large) {
-        padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+        height: 3.5rem;
+        width: 3.5rem;
     }
 }
 
 .testimonial__btn-icon {
     display: block;
+    margin: auto;
     height: 12px;
 
     @include breakpoint-up(large) {
@@ -130,16 +144,21 @@
     }
 }
 
+// text section of the testimonial ===============================
+
 .testimonial__copy {
     position: relative;
     overflow-x: hidden;
+    background-image: url('/images/pattern-quotes.svg');
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    background-position: center top;
 
 
     @include breakpoint-up(large) {
         grid-column-start: 1;
         grid-row-start: 1;
-        transform: translateX(6.25rem);
-        z-index: 5;
+        transform: translateX(5.25rem);
         overflow: visible;
     }
 }
@@ -149,17 +168,19 @@
     top: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:first baseline;
     align-items: center;
     height: 100%;
     width: 100%;
-    padding: 3.5rem 2rem 4.75rem 2rem;
+    max-height: 42rem;
+    padding: 1.5rem 2rem;
     text-align: center;
     line-height: 1.5rem;
 
     @include breakpoint-up(large) {
         padding: 0;
         align-items: flex-start;
+        height: auto;
     }
 }
 
@@ -167,8 +188,15 @@
     max-width: 28rem;
     margin: 0 auto;
     padding-bottom: 1.25rem;
-    color: $darkBlue;
+    font-size: 1rem;
     font-weight: $light;
+    line-height: 1.5rem;
+    color: $darkBlue;
+
+    @include breakpoint-up(small) {
+        font-size: 1.25rem;
+        padding-bottom: 2rem;
+    }
 
     @include breakpoint-up(large) {
         max-width: 39.5rem;
