@@ -1,0 +1,234 @@
+.testimonial {
+    display: grid;
+    grid-template-rows: 1.2fr 1fr;
+    gap: 1rem;
+    height: 100%;
+
+    @include breakpoint-up(large) {
+        grid-template-columns: 1fr 1.3fr;
+        grid-template-rows: 1fr;
+        gap: 0;
+        max-width: 80rem;
+        margin: auto;
+    }
+}
+
+
+// image section of the slider ===============================
+
+.testimonial__img__container {
+    margin: 1rem;
+    overflow-x: hidden;
+    background-image: url('/images/pattern-bg.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include breakpoint-up(large) {
+        grid-column-start: 2;
+        margin: 1rem 2rem 1rem 0;
+    }
+}
+
+.testimonial__img-wrapper {
+    position: relative;
+    height: 25rem;
+    width: 25rem;
+    max-height: 85%;
+    max-width: 85%;
+
+    @include breakpoint-up(large) {
+        height: 34rem;
+        width: 34rem;
+        max-width: 75%;
+    }
+}
+
+// the actual image --------
+
+.testimonial__img {
+    display: block;
+    height: 100%;
+    width: auto;
+    margin: auto;
+    border-radius: 0.3125rem;
+    background-image: url('/images/image-tanya.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 
+        0 1rem 2.5rem -2.5rem rgba(36, 36, 113, 0.495001);
+    
+
+    @include breakpoint-up(large) {
+        box-shadow: 
+        0 2.5rem 3rem -1.75rem rgba(36, 36, 113, 0.495001);
+    }
+}
+
+// slider buttons ===================================
+.testimonial__btn-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border-radius: 4rem;
+    background-color: $white;
+    box-shadow: 0px 15px 20px -10px rgba(36, 36, 113, 0.0991313);
+    z-index: 7;
+    
+
+    @include breakpoint-up(large) {
+        box-shadow: 0px 1rem 1.25rem -0.625rem rgba(36, 36, 113, 0.0991313);
+        left: 4rem;
+        transform: translateY(50%);
+    }
+}
+
+.testimonial__prev {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 0;
+    border-radius: 50%;
+    background-color: $white;
+    
+    &:hover {
+        background-color: $grayishBlue;
+        cursor: pointer;
+    }
+
+    @include breakpoint-up(large) {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+}
+
+.testimonial__next {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 0;
+    border-radius: 50%;
+    background-color: $white;
+
+    &:hover {
+        background-color: $grayishBlue;
+        cursor: pointer;
+    }
+
+    @include breakpoint-up(large) {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+}
+
+.testimonial__btn-icon {
+    display: block;
+    margin: auto;
+    height: 12px;
+
+    @include breakpoint-up(large) {
+        height: 16px;
+    }
+}
+
+// text section of the testimonial ===============================
+
+.testimonial__copy {
+    position: relative;
+    overflow-x: hidden;
+    
+
+    @include breakpoint-up(large) {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        overflow: visible;
+    }
+}
+
+.testimonials__copy-wrapper {
+    width: 120%;
+    max-height: 23rem;
+    padding: 0.75rem 2rem;
+    background-image: url('/images/pattern-quotes.svg');
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    background-position: center top;
+    text-align: center;
+
+    @include breakpoint-up(small) {
+        padding: 1.5rem 2rem;
+        background-size: 7.5rem;
+    }
+
+    @include breakpoint-up(medium) {
+        padding: 3rem 2rem;
+    }
+
+    @include breakpoint-up(large) {
+        position: absolute;
+        left: 5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0;
+        background-position: left 6rem top;
+        text-align: left;
+    }
+}
+
+
+.testimonials__text {
+    max-width: 28rem;
+    margin: 0 auto;
+    padding-bottom: 1.25rem;
+    font-size: 1rem;
+    font-weight: $light;
+    line-height: 1.5rem;
+    color: $darkBlue;
+
+    @include breakpoint-up(small) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        padding-bottom: 2rem;
+    }
+
+    @include breakpoint-up(medium) {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+    }
+
+    @include breakpoint-up(large) {
+        max-width: unset;
+        margin: 2rem 0;
+        padding: 0;
+        text-align: left;
+        font-size: 1.75rem;
+        line-height: 2.75rem;
+    }
+}
+
+.testimonials__author {
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+    font-weight: $bold;
+    color: $darkBlue;
+
+    @include breakpoint-up(small) {
+        font-size: 1.125rem;
+    }
+
+    @include breakpoint-up(medium) {
+        font-size: 1.25rem;
+        line-height: 2.25rem;
+    }
+}
+
+.testimonials__position {
+    display: block;
+    font-weight: $light;
+    color: $grayishBlue;
+
+    @include breakpoint-up(large) {
+        display: inline-block;
+        padding-left: 0.5rem
+    }
+}

@@ -1,0 +1,42 @@
+html {
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: $white;
+    background-image: url('/images/pattern-curve.svg');
+    background-repeat: no-repeat;
+    background-size: 76%;
+    background-position: bottom left;
+
+    @include breakpoint-up(large) {
+        background-size: 46%;
+        background-position: bottom left -40px;
+    }
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+
+// spacing
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center-top {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
