@@ -4,6 +4,7 @@ html {
 
 *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
@@ -11,12 +12,6 @@ body {
     padding: 0;
     font-family: 'Inter', sans-serif;
     background-color: $white;
-
-}
-
-.container {
-    height: 100vh;
-    width: 100vw;
     background-image: url('/images/pattern-curve.svg');
     background-repeat: no-repeat;
     background-size: 76%;
@@ -26,5 +21,22 @@ body {
         background-size: 46%;
         background-position: bottom left -40px;
     }
-    
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+
+// spacing
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center-top {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }

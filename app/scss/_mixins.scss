@@ -1,6 +1,6 @@
-// 400px, 980 px and up
+// 400px, 768px, 1024px, 1440px
 
-$breakpoints-up: ("small": "25rem", "large": "61.25rem");
+$breakpoints-up: ("small": "25rem", "medium" : "48rem", "large": "64rem", "xlarge": "90rem");
 
 @mixin breakpoint-up($size) {
     @media (min-width: map-get($breakpoints-up ,$size)) {
