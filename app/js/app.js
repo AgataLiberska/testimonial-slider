@@ -7,22 +7,17 @@
 import { testimonials } from './seeds.js';
 
 const image = document.querySelector('.js-image');
+const copy = document.querySelector('.js-copy');
 const person = document.querySelector('.js-author');
 const role = document.querySelector('.js-role');
 const text = document.querySelector('.js-text');
 
 const next = document.querySelector('.js-next');
-const prev = document.querySelector('.js-next');
+const prev = document.querySelector('.js-prev');
 
 let index = 0;
 
-next.addEventListener('click', (e) => {
-    index++;
-
-    if (index === testimonials.length) {
-        index = 0;
-    }
-
+function getTestimonial() {
 
     image.classList.remove('fade-from-right');
     image.classList.add('fade-to-right');
@@ -35,11 +30,40 @@ next.addEventListener('click', (e) => {
         image.classList.add('fade-from-right');
     })
 
+    copy.classList.remove('fade-from-left');
+    copy.classList.add('fade-to-left');
 
+    copy.addEventListener('animationend', (e) => {
+        if(e.animationName === 'fade-to-left') {
+            person.textContent = `${testimonials[index].name}`;
+            role.textContent = `${testimonials[index].role}`;
+            text.textContent = `${testimonials[index].text}`;
+        }
 
-    person.classList.add('fade-to-left');
-    role.classList.add('fade-to-left');
-    text.classList.add('fade-to-left');
+        copy.classList.remove('fade-to-left');
+        copy.classList.add('fade-from-left');
+    })
+}
 
+next.addEventListener('click', (e) => {
+    index++;
 
+    if (index === testimonials.length) {
+        index = 0;
+    }
+
+    getTestimonial()
+
+})
+
+prev.addEventListener('click', (e) => {
+    index--;
+
+    console.log(index);
+    if (index < 0) {
+        index = testimonials.length -1;
+        console.log(index, 'hello') 
+    }
+
+    getTestimonial();
 })
