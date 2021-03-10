@@ -19,30 +19,25 @@ let index = 0;
 
 function getTestimonial() {
 
-    image.classList.remove('fade-from-right');
     image.classList.add('fade-to-right');
 
-    image.addEventListener('animationend', (e) => {
-        if (e.animationName === 'fade-to-right') {
-            image.style.backgroundImage = `url(${testimonials[index].image})`;
-            image.setAttribute("aria-label", `${testimonials[index].alt}`);
-        }
+    image.addEventListener('transitionend', () => {
+        
+        image.style.backgroundImage = `url(${testimonials[index].image})`;
+        image.setAttribute("aria-label", `${testimonials[index].alt}`);
+        
         image.classList.remove('fade-to-right');
-        image.classList.add('fade-from-right');
     })
 
-    copy.classList.remove('fade-from-left');
     copy.classList.add('fade-to-left');
 
-    copy.addEventListener('animationend', (e) => {
-        if(e.animationName === 'fade-to-left') {
-            person.textContent = `${testimonials[index].name}`;
-            role.textContent = `${testimonials[index].role}`;
-            text.textContent = `${testimonials[index].text}`;
-        }
+    copy.addEventListener('transitionend', () => {
+        
+        person.textContent = `${testimonials[index].name}`;
+        role.textContent = `${testimonials[index].role}`;
+        text.textContent = `${testimonials[index].text}`;
 
         copy.classList.remove('fade-to-left');
-        copy.classList.add('fade-from-left');
     })
 }
 
@@ -54,7 +49,6 @@ next.addEventListener('click', (e) => {
     }
 
     getTestimonial()
-
 })
 
 prev.addEventListener('click', (e) => {
