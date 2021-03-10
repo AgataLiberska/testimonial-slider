@@ -11,8 +11,6 @@ This is a solution to the [Coding bootcamp testimonials slider challenge on Fron
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -45,9 +43,13 @@ Users should be able to:
 
 ### What I learned
 
-Positioning images of bootcamp graduates in a way that was close to the design and looked well on all devices proved to be the most challenging element of this project. Eventually, I decided to set the images as background in my CSS. To ensure that they would still be accessible to screen reader users, I added `role="img"` and set an `aria-label` to the `<div>` they are on.
+From the get-go, I knew that although this project may seem very simple, parts of it would be quite tricky. I knew that I wanted all background images to be completely static on the page, and the content of the testimonials to slide/fade in and out. This required thorough planning and quite a few adjustments on the way, but I achieved the planned result.
 
-To animate the slider, I initially used `@keyframes` animations. However, this meant that in JavaScript, I repeatedly added and removed classes to achieve the desired effect. To simplify this, I decided to skip animations and rely on simple transition, instead. Thanks to this, my code became a lot cleaner and more readable. You can see this below: the first code snippet shows initial code, and the second snippet shows the final version.
+Positioning images of testimonial authors in a way that was close to the design and looked well on all devices proved to be the most challenging element of this project. Eventually, I decided to set the images as background in my CSS. To ensure that they would still be accessible to screen reader users, I added `role="img"` and set an `aria-label` to the `<div>` they are on.
+
+I also wanted to ensure that the slider would keep its functionality no matter how many testimonials were added to it. All testimonial data is stored in an array of objects, and to showcase the functionality better, I added a few extra testimonials.
+
+To animate the slider, I initially used `@keyframes` animations. However, this meant that in JavaScript, I repeatedly added and removed classes to achieve the desired effect. To simplify this, I decided to skip animations and rely on simple transitions instead. Thanks to this, my code became a lot cleaner and more readable. You can see this below: the first code snippet shows initial code, and the second snippet shows the final version.
 
 ```js
 // this is the initial code, relying on @keyframes animation
@@ -101,15 +103,17 @@ function getTestimonial() {
 }
 ```
 
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-
 ## Author
 
 - Frontend Mentor - [@AgataLiberska](https://www.frontendmentor.io/profile/AgataLiberska)
 
+## Acknowledgments
 
+Images not provided by Frontend Mentor with this challenge are from [usnplash.com](unsplash.com)
+
+- Jenna: Photo by [Anne Peres](https://unsplash.com/@anneperess?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+- Ian: Photo by [Charles Etoroma](https://unsplash.com/@charlesetoroma?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+- Olivia: Photo by [alex starnes](https://unsplash.com/@alexstarnes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+  
+  
+  
