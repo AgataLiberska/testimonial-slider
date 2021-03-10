@@ -290,6 +290,13 @@ body {
   cursor: pointer;
 }
 
+.testimonial__prev:focus {
+  outline: none;
+  border: 2px solid #202046;
+  background-color: #babacf;
+  cursor: pointer;
+}
+
 @media (min-width: 64rem) {
   .testimonial__prev {
     height: 3.5rem;
@@ -306,6 +313,13 @@ body {
 }
 
 .testimonial__next:hover {
+  background-color: #babacf;
+  cursor: pointer;
+}
+
+.testimonial__next:focus {
+  outline: none;
+  border: 2px solid #202046;
   background-color: #babacf;
   cursor: pointer;
 }
@@ -346,7 +360,6 @@ body {
 
 .testimonials__copy-wrapper {
   width: 120%;
-  max-height: 23rem;
   padding: 0.75rem 2rem;
   background-image: url("/images/pattern-quotes.svg");
   background-repeat: no-repeat;
@@ -375,6 +388,7 @@ body {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
+    height: 20rem;
     padding: 0;
     background-position: left 6rem top;
     text-align: left;

@@ -94,10 +94,18 @@
     border-radius: 50%;
     background-color: $white;
     
-    &:hover {
+    &:hover {   
         background-color: $grayishBlue;
         cursor: pointer;
     }
+
+    &:focus {
+        outline: none;
+        border: 2px solid $darkBlue;
+        background-color: $grayishBlue;
+        cursor: pointer;
+    }
+
 
     @include breakpoint-up(large) {
         height: 3.5rem;
@@ -113,6 +121,13 @@
     background-color: $white;
 
     &:hover {
+        background-color: $grayishBlue;
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+        border: 2px solid $darkBlue;
         background-color: $grayishBlue;
         cursor: pointer;
     }
@@ -149,7 +164,7 @@
 
 .testimonials__copy-wrapper {
     width: 120%;
-    max-height: 23rem;
+    //max-height: 23rem;
     padding: 0.75rem 2rem;
     background-image: url('/images/pattern-quotes.svg');
     background-repeat: no-repeat;
@@ -171,6 +186,7 @@
         left: 5rem;
         top: 50%;
         transform: translateY(-50%);
+        height: 20rem;
         padding: 0;
         background-position: left 6rem top;
         text-align: left;
