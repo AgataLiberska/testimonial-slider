@@ -25,6 +25,7 @@ function getTestimonial() {
     image.addEventListener('animationend', (e) => {
         if (e.animationName === 'fade-to-right') {
             image.style.backgroundImage = `url(${testimonials[index].image})`;
+            image.setAttribute("aria-label", `${testimonials[index].alt}`);
         }
         image.classList.remove('fade-to-right');
         image.classList.add('fade-from-right');
