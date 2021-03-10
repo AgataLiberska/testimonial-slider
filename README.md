@@ -1,71 +1,119 @@
-# Frontend Mentor - Coding Bootcamp Testimonials Slider
+# Frontend Mentor - Coding bootcamp testimonials slider solution
 
-![Design preview for the Coding Bootcamp Testimonials Slider coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Coding bootcamp testimonials slider challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/coding-bootcamp-testimonials-slider-4FNyLA8JL). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges allow you to improve your skills in a real-life workflow.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this testimonial slider and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to: 
+Users should be able to:
 
 - View the optimal layout for the component depending on their device's screen size
 - Navigate the slider using either their mouse/trackpad or keyboard
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![Screenshot of my solution](./images/slider-screenshot.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design to work to. 
+### Links
 
-The designs are in JPG static format. This will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. This should help train your eye to perceive differences in spacings and sizes.
+- [View the live page here](https://testimonial-slider-sage.vercel.app/)
 
-If you would like the Sketch file in order to inspect the design in more detail you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### Built with
 
-There is also a `style-guide.md` file, which contains the information you'll need, such as color palette and fonts.
+- Semantic HTML5 markup
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Vanilla JavaScript
 
-## Building your project
+### What I learned
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+From the get-go, I knew that although this project may seem very simple, parts of it would be quite tricky. I knew that I wanted all background images to be completely static on the page, and the content of the testimonials to slide/fade in and out. This required thorough planning and quite a few adjustments on the way, but I achieved the planned result.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). This will make it easier to share your code with the community if you need some help. If you're not sure how to do this, [have a read through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a URL. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, but we recommend using [Vercel](https://bit.ly/fem-vercel). We've got more information about deploying your project with Vercel below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes that you could create to make reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+Positioning images of testimonial authors in a way that was close to the design and looked well on all devices proved to be the most challenging element of this project. Eventually, I decided to set the images as background in my CSS. To ensure that they would still be accessible to screen reader users, I added `role="img"` and set an `aria-label` to the `<div>` they are on.
 
-## Deploying your project
+I also wanted to ensure that the slider would keep its functionality no matter how many testimonials were added to it. All testimonial data is stored in an array of objects, and to showcase the functionality better, I added a few extra testimonials.
 
-As mentioned above, there are a number of ways to host your project for free. We recommend using [Vercel](https://bit.ly/fem-vercel) as it's an amazing service and extremely simple to get set up with. If you'd like to use Vercel, here are some steps to follow to get started:
+To animate the slider, I initially used `@keyframes` animations. However, this meant that in JavaScript, I repeatedly added and removed classes to achieve the desired effect. To simplify this, I decided to skip animations and rely on simple transitions instead. Thanks to this, my code became a lot cleaner and more readable. You can see this below: the first code snippet shows initial code, and the second snippet shows the final version.
 
-1. [Sign up to Vercel](https://bit.ly/fem-vercel-signup) and go through the onboarding flow, ensuring your GitHub account is connected by using their [Vercel for GitHub](https://vercel.com/docs/v2/git-integrations/vercel-for-github) integration.
-2. Connect your project to Vercel from the ["Import project" page](https://vercel.com/import), using the "From Git Repository" button and selecting the project you want to deploy.
-3. Once connected, every time you `git push`, Vercel will create a new [deployment](https://vercel.com/docs/v2/platform/deployments) and the deployment URL will be shown on your [Dashboard](https://vercel.com/dashboard). You will also receive an email for each deployment with the URL.
+```js
+// this is the initial code, relying on @keyframes animation
+function getTestimonial() {
 
-## Sharing your solution
+    image.classList.remove('fade-from-right');
+    image.classList.add('fade-to-right');
 
-There are multiple places you can share your solution:
+    image.addEventListener('animationend', (e) => {
+        if (e.animationName === 'fade-to-right') {
+            image.style.backgroundImage = `url(${testimonials[index].image})`;
+            image.setAttribute("aria-label", `${testimonials[index].alt}`);
+        }
+        image.classList.remove('fade-to-right');
+        image.classList.add('fade-from-right');
+    })
 
-1. Submit it on the platform so that other users will see your solution on the site. Here's our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) to help you do that.
-2. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack).
-3. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor** including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
+    copy.classList.remove('fade-from-left');
+    copy.classList.add('fade-to-left');
 
-## Giving feedback
+    copy.addEventListener('animationend', (e) => {
+        if(e.animationName === 'fade-to-left') {
+            person.textContent = `${testimonials[index].name}`;
+            role.textContent = `${testimonials[index].role}`;
+            text.textContent = `${testimonials[index].text}`;
+        }
 
-Feedback is always welcome, so if you have any to give on this challenge please email hi[at]frontendmentor[dot]io.
+        copy.classList.remove('fade-to-left');
+        copy.classList.add('fade-from-left');
+    })
+}
+```
+```js
+// the final function, slider effect based on CSS transitions
+function getTestimonial() {
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+    image.classList.add('fade-to-right');
+    image.addEventListener('transitionend', () => {
+        image.style.backgroundImage = `url(${testimonials[index].image})`;
+        image.setAttribute("aria-label", `${testimonials[index].alt}`);
+        image.classList.remove('fade-to-right');
+    })
 
-**Have fun building!** 🚀
+    copy.classList.add('fade-to-left');
+    copy.addEventListener('transitionend', () => {
+        person.textContent = `${testimonials[index].name}`;
+        role.textContent = `${testimonials[index].role}`;
+        text.textContent = `${testimonials[index].text}`;
+        copy.classList.remove('fade-to-left');
+    })
+}
+```
+
+## Author
+
+- Frontend Mentor - [@AgataLiberska](https://www.frontendmentor.io/profile/AgataLiberska)
+
+## Acknowledgments
+
+Images not provided by Frontend Mentor with this challenge are from [usnplash.com](unsplash.com)
+
+- Jenna: Photo by [Anne Peres](https://unsplash.com/@anneperess?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+- Ian: Photo by [Charles Etoroma](https://unsplash.com/@charlesetoroma?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+- Olivia: Photo by [alex starnes](https://unsplash.com/@alexstarnes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+  
+  
+  
