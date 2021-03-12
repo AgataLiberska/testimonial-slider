@@ -49,6 +49,28 @@ Positioning images of testimonial authors in a way that was close to the design 
 
 I also wanted to ensure that the slider would keep its functionality no matter how many testimonials were added to it. All testimonial data is stored in an array of objects, and to showcase the functionality better, I added a few extra testimonials.
 
+The images are preloaded in CSS to ensure that there is no delay when browsing testimonials:
+
+```
+.testimonial {
+
+      &::after {
+        content: 
+            url('/images/image-ian.jpg')
+            url('/images/image-jenna.jpg')
+            url('/images/image-john.jpg')
+            url('/images/image-olivia.jpg')
+            url('/images/image-tanya.jpg');
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: -1;
+    }
+}
+```
+
+
 To animate the slider, I initially used `@keyframes` animations. However, this meant that in JavaScript, I repeatedly added and removed classes to achieve the desired effect. To simplify this, I decided to skip animations and rely on simple transitions instead. Thanks to this, my code became a lot cleaner and more readable. You can see this below: the first code snippet shows initial code, and the second snippet shows the final version.
 
 ```js
@@ -108,6 +130,8 @@ function getTestimonial() {
 - Frontend Mentor - [@AgataLiberska](https://www.frontendmentor.io/profile/AgataLiberska)
 
 ## Acknowledgments
+
+Big thanks to [@ApplePieGiraffe](https://www.frontendmentor.io/profile/ApplePieGiraffe) for their help with preloading images!
 
 Images not provided by Frontend Mentor with this challenge are from [usnplash.com](unsplash.com)
 
