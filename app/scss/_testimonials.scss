@@ -11,7 +11,25 @@
         max-width: 80rem;
         margin: auto;
     }
+
+    // to preload images
+    &::after {
+        content: 
+            url('/images/image-ian.jpg')
+            url('/images/image-jenna.jpg')
+            url('/images/image-john.jpg')
+            url('/images/image-olivia.jpg')
+            url('/images/image-tanya.jpg');
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        z-index: -1;
+    }
 }
+
+
+
 
 
 // image section of the slider ===============================
